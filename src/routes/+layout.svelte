@@ -4,11 +4,11 @@
 </svelte:head>
 
 <script lang="ts">
-	import Inter from '$lib/fonts/Inter.svelte';
+	import { Inter } from '$lib';
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
 	import { Toaster } from 'svelte-sonner';
-	import WithDark from '$lib/theme/WithDark.svelte';
+	import { WithDark } from '$lib';
 
 	let { children } = $props();
 	

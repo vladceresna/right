@@ -1,6 +1,6 @@
 {
 	"name": "rightui",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"author": "Vlad Ceresna <vladceresna6@gmail.com> (https://vladceresna.netlify.app)",
 	"description": "Beautiful UI library for Svelte. Based on shadcn-svelte. For Wonrity ",
 	"license": "MIT",
@@ -36,7 +36,9 @@
 		"!dist/**/*.spec.*"
 	],
 	"sideEffects": [
-		"**/*.css"
+		"**/*.css",
+		"**/*.pcss",
+		"**/*.svelte"
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",

@@ -1,58 +1,161 @@
-# Svelte library
+# Right UI
+### by Wonrity
+## Installing
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
-
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+1. Create Svelte project
 ```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npx sv create yourapp
+cd yourapp
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+2. Install rightui
 ```sh
-npm run dev
+npm i rightui
+```
+3. Add tailwindcss via SvlteKit CLI
+```sh
+npx sv add tailwindcss
+```
+3. Create src/app.css
+```css
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-# or start the server and open the app in a new browser tab
+@import "tw-animate-css";
+ 
+@custom-variant dark (&:is(.dark *));
+ 
+:root {
+ --background: hsl(0 0% 100%) /* <- Wrap in HSL */;
+ --foreground: hsl(240 10% 3.9%);
+ --muted: hsl(240 4.8% 95.9%);
+ --muted-foreground: hsl(240 3.8% 46.1%);
+ --popover: hsl(0 0% 100%);
+ --popover-foreground: hsl(240 10% 3.9%);
+ --card: hsl(0 0% 100%);
+ --card-foreground: hsl(240 10% 3.9%);
+ --border: hsl(240 5.9% 90%);
+ --input: hsl(240 5.9% 90%);
+ --primary: hsl(240 5.9% 10%);
+ --primary-foreground: hsl(0 0% 98%);
+ --secondary: hsl(240 4.8% 95.9%);
+ --secondary-foreground: hsl(240 5.9% 10%);
+ --accent: hsl(240 4.8% 95.9%);
+ --accent-foreground: hsl(240 5.9% 10%);
+ --destructive: hsl(0 72.2% 50.6%);
+ --destructive-foreground: hsl(0 0% 98%);
+ --ring: hsl(240 10% 3.9%);
+ --sidebar: hsl(0 0% 98%);
+ --sidebar-foreground: hsl(240 5.3% 26.1%);
+ --sidebar-primary: hsl(240 5.9% 10%);
+ --sidebar-primary-foreground: hsl(0 0% 98%);
+ --sidebar-accent: hsl(240 4.8% 95.9%);
+ --sidebar-accent-foreground: hsl(240 5.9% 10%);
+ --sidebar-border: hsl(220 13% 91%);
+ --sidebar-ring: hsl(217.2 91.2% 59.8%);
+ 
+ --radius: 1rem;
+}
+ 
+.dark {
+ --background: hsl(240 10% 3.9%);
+ --foreground: hsl(0 0% 98%);
+ --muted: hsl(240 3.7% 15.9%);
+ --muted-foreground: hsl(240 5% 64.9%);
+ --popover: hsl(240 10% 3.9%);
+ --popover-foreground: hsl(0 0% 98%);
+ --card: hsl(240 10% 3.9%);
+ --card-foreground: hsl(0 0% 98%);
+ --border: hsl(240 3.7% 15.9%);
+ --input: hsl(240 3.7% 15.9%);
+ --primary: hsl(0 0% 98%);
+ --primary-foreground: hsl(240 5.9% 10%);
+ --secondary: hsl(240 3.7% 15.9%);
+ --secondary-foreground: hsl(0 0% 98%);
+ --accent: hsl(240 3.7% 15.9%);
+ --accent-foreground: hsl(0 0% 98%);
+ --destructive: hsl(0 62.8% 30.6%);
+ --destructive-foreground: hsl(0 0% 98%);
+ --ring: hsl(240 4.9% 83.9%);
+ --sidebar: hsl(240 5.9% 10%);
+ --sidebar-foreground: hsl(240 4.8% 95.9%);
+ --sidebar-primary: hsl(224.3 76.3% 48%);
+ --sidebar-primary-foreground: hsl(0 0% 100%);
+ --sidebar-accent: hsl(240 3.7% 15.9%);
+ --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+ --sidebar-border: hsl(240 3.7% 15.9%);
+ --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+ 
+@theme inline {
+ /* Radius (for rounded-*) */
+ --radius-sm: calc(var(--radius) - 4px);
+ --radius-md: calc(var(--radius) - 2px);
+ --radius-lg: var(--radius);
+ --radius-xl: calc(var(--radius) + 4px);
+ 
+ /* Colors */
+ --color-background: var(--background);
+ --color-foreground: var(--foreground);
+ --color-muted: var(--muted);
+ --color-muted-foreground: var(--muted-foreground);
+ --color-popover: var(--popover);
+ --color-popover-foreground: var(--popover-foreground);
+ --color-card: var(--card);
+ --color-card-foreground: var(--card-foreground);
+ --color-border: var(--border);
+ --color-input: var(--input);
+ --color-primary: var(--primary);
+ --color-primary-foreground: var(--primary-foreground);
+ --color-secondary: var(--secondary);
+ --color-secondary-foreground: var(--secondary-foreground);
+ --color-accent: var(--accent);
+ --color-accent-foreground: var(--accent-foreground);
+ --color-destructive: var(--destructive);
+ --color-destructive-foreground: var(--destructive-foreground);
+ --color-ring: var(--ring);
+ --color-radius: var(--radius);
+ --color-sidebar: var(--sidebar);
+ --color-sidebar-foreground: var(--sidebar-foreground);
+ --color-sidebar-primary: var(--sidebar-primary);
+ --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+ --color-sidebar-accent: var(--sidebar-accent);
+ --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+ --color-sidebar-border: var(--sidebar-border);
+ --color-sidebar-ring: var(--sidebar-ring);
+}
+ 
+@layer base {
+ * {
+  @apply border-border;
+ }
+ 
+ body {
+  @apply bg-background text-foreground;
+ }
+}
+```
+You can customize colors and other variables in `:root` and `.dark` blocks.
+4. Add app.css, font Inter, Toaster, ModeWatcher and WithDark in your root `+layout.svelte` file
+```svelte
+<script lang="ts">
+	import '../app.css';
+	import { Inter } from 'rightui';
+	import { WithDark } from 'rightui';
+	import { ModeWatcher } from 'mode-watcher';
+	import { Toaster } from 'svelte-sonner';
+
+	let { children } = $props();
+</script>
+
+<ModeWatcher />
+<WithDark>
+<Toaster />
+<Inter> 
+{@render children()}
+</Inter>
+</WithDark>
+```
+6. Start your project
+```sh
 npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```sh
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-npm publish
 ```
