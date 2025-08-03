@@ -3,7 +3,7 @@
   import MoonIcon from "@lucide/svelte/icons/moon";
  
   import { toggleMode } from "mode-watcher";
-	import { Button } from "$lib/index.ts";
+	import { Button } from "$lib";
 </script>
  
 <Button onclick={toggleMode} variant="outline" size="icon">
