@@ -2,7 +2,7 @@
 ### by Wonrity
 ## Why did we create Right UI?
 
-We created Right UI because we needed a simple and beautiful solution for styling our SvelteKit projects. We were previously using Shadcn UI, but it started to go in the wrong direction, removing the New York style, abandoning old blocks which were beautiful and limiting customization options to just 7 color variants. So, we decided to make our own solution based on Shadcn UI, but with a focus on simplicity and independence from versions. We tried to make configuration as simple as possible and components especially beautiful.
+We created Right UI because we needed a simple and beautiful solution for styling our SvelteKit projects. We were previously using Shadcn UI, but it started to go in the wrong direction, removing the Default style, abandoning old blocks which were beautiful and limiting customization options to just 7 color variants. So, we decided to make our own solution based on Shadcn UI, but with a focus on simplicity and independence from versions. We tried to make configuration as simple as possible and components especially beautiful.
 
 ## Installing
 
