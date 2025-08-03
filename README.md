@@ -1,21 +1,25 @@
 # Right UI
 ### by Wonrity
+## Why did we create Right UI?
+
+We created Right UI because we needed a simple and beautiful solution for styling our SvelteKit projects. We were previously using Shadcn UI, but it started to go in the wrong direction, removing the New York style, abandoning old blocks which were beautiful and limiting customization options to just 7 color variants. So, we decided to make our own solution based on Shadcn UI, but with a focus on simplicity and independence from versions. We tried to make configuration as simple as possible and components especially beautiful.
+
 ## Installing
 
-1. Create Svelte project
+1. Create Svelte project:
 ```sh
 npx sv create yourapp
 cd yourapp
 ```
-2. Install rightui
+2. Install rightui:
 ```sh
 npm i rightui
 ```
-3. Add tailwindcss via SvlteKit CLI
+3. Add tailwindcss via SvelteKit CLI:
 ```sh
 npx sv add tailwindcss
 ```
-4. Create src/app.css
+4. Create src/app.css:
 ```css
 @import 'tailwindcss';
 @import 'tw-animate-css';
@@ -136,27 +140,42 @@ npx sv add tailwindcss
 
 ```
 You can customize colors and other variables in `:root` and `.dark` blocks.
-5. Add app.css, font Inter, Toaster, ModeWatcher and WithDark in your root `+layout.svelte` file
+5. Add [svelte-sonner](https://svelte-sonner.vercel.app/):
+```sh
+npm install svelte-sonner
+```
+6. Add [mode-watcher](https://mode-watcher.sveco.dev/docs/getting-started):
+```sh
+npm install mode-watcher
+```
+7. Add app.css, font Inter, Toaster, ModeWatcher and WithDark in your root `+layout.svelte` file:
 ```svelte
 <script lang="ts">
-	import '../app.css';
-	import { Inter } from 'rightui';
-	import { WithDark } from 'rightui';
-	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
+	import { ModeWatcher } from 'mode-watcher';
+	import '../app.css';
+	import favicon from '$lib/assets/favicon.svg';
+	import { Inter, WithDark } from 'rightui';
 
 	let { children } = $props();
 </script>
+
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
 <ModeWatcher />
 <WithDark>
 <Toaster />
 <Inter> 
-{@render children()}
+{@render children?.()}
 </Inter>
 </WithDark>
 ```
-6. Start your project
+8. Start your project:
 ```sh
 npm run dev -- --open
 ```
+
+🎉 Enjoy!
+✨ No thanks, just give me a Star!
