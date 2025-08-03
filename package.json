@@ -1,6 +1,24 @@
 {
-	"name": "right",
+	"name": "rightui",
 	"version": "0.0.1",
+	"author": "Vlad Ceresna <vladceresna6@gmail.com> (https://vladceresna.netlify.app)",
+	"description": "Beautiful UI library for Svelte. Based on shadcn-svelte. For Wonrity ",
+	"license": "MIT",
+	"repository": "vladceresna/rightui",
+	"bugs": "https://github.com/vladceresna/rightui/issues",
+	"homepage": "https://rightui.netlify.app/",
+	"keywords": [
+		"ui",
+		"svelte",
+		"tailwind",
+		"shadcn",
+		"shadcn-svelte",
+		"ui-library",
+		"components",
+		"wonrity",
+		"wonrity-ui"
+	],
+
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -56,9 +74,6 @@
 		"typescript-eslint": "^8.20.0",
 		"vite": "^7.0.4"
 	},
-	"keywords": [
-		"svelte"
-	],
 	"dependencies": {
 		"@lucide/svelte": "^0.536.0",
 		"bits-ui": "^2.9.1",
