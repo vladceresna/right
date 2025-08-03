@@ -140,6 +140,7 @@ npx sv add tailwindcss
 
 ```
 You can customize colors and other variables in `:root` and `.dark` blocks.
+
 5. Add [svelte-sonner](https://svelte-sonner.vercel.app/):
 ```sh
 npm install svelte-sonner
