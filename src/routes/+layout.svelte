@@ -1,6 +1,6 @@
 
 <svelte:head>
-	<title>Right - Wonrity UXI</title>
+	<title>Right UI - awesome components made by Wonrity</title>
 </svelte:head>
 
 <script lang="ts">
